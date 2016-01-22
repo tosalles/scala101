@@ -9,6 +9,6 @@ class HelloTest extends FunSuite {
   }
 
   test("1 + 1 = 2") {
-    assert(hello.sum(1,1) == 1)
+    assert(hello.sum(1,1) == 2)
   }
 }
