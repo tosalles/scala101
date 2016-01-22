@@ -1,5 +1,5 @@
 # Scala 101
 
-![Build badge](https://api.travis-ci.org/Sogyo/scala101.svg)
+[![Build Status](https://travis-ci.org/Sogyo/scala101.svg?branch=master)](https://travis-ci.org/Sogyo/scala101)
 
 Opdrachten voor tkd
