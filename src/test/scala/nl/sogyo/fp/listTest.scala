@@ -19,4 +19,15 @@ class listTest extends FunSuite {
     assert(lists.filterEvens(List(1,3,5), List()) == List())
   }
 
+  test("5 is max value in [1,2,3,4,5]") {
+    assert(lists.findMax(List(1,2,3,4,5)) == 5)
+  }
+
+  test("5 is max value in [5,4,3,2,1]") {
+    assert(lists.findMax(List(5,4,3,2,1)) == 5)
+  }
+
+  test("5 is max value in [3,1,5,2,4]") {
+    assert(lists.findMax(List(3,1,5,2,4)) == 5)
+  }
 }
