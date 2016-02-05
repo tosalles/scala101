@@ -28,4 +28,8 @@ object arithmetics {
     case 2 => 1
     case _ => nthFibonacciNumber(nth - 1) + nthFibonacciNumber(nth - 2)
   }
+
+  def curriedSum(x: Int)(y: Int): Int = {
+    x + y
+  }
 }

@@ -31,4 +31,8 @@ class arithmeticsTest extends FunSuite {
   test("3rd Fibonacci number is 1") {
     assert(arithmetics.nthFibonacciNumber(3) == 1)
   }
+
+  test("Sum integers by currying") {
+    assert(arithmetics.curriedSum(1)(1) == 2)
+  }
 }
