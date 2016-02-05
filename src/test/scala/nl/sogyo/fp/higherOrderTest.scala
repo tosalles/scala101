@@ -20,4 +20,14 @@ class higherOrderTest extends FunSuite {
     val list = List(true,false,true)
     assert(list.map(b => !b) == List(false,true,false))
   }
+
+  test("Return every first element of a list") {
+    val list = List(List(1,2,3), List(4,5,6), List(7,8,9))
+    assert(list.map(l => l.head) == List(1,4,7))
+  }
+
+  test("Return a list of booleans based on a list of characters, where false means whitespace, true on characters") {
+    val list = "Ik werk bij Sogyo".toCharArray.toList
+    assert(list.map(c => if(c == ' ') false; else true) == List(true, true, false, true, true, true, true, false, true, true, true, false, true, true, true, true, true))
+  }
 }
