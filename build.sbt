@@ -1,3 +1,5 @@
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint")
+
 lazy val commonSettings = Seq(
   scalaVersion := "2.11.7"
 )
