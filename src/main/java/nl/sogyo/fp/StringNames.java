@@ -23,6 +23,7 @@ public class StringNames {
         return names.stream()
                 .filter(n -> n.length() > 3)
                 .map(StringNames::capitalizeName)
-                .collect(Collectors.joining(", "));
+                .reduce((x,y) -> x + ", " + y)
+                .get();
     }
 }
