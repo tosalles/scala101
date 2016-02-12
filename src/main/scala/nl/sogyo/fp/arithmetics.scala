@@ -1,9 +1,7 @@
 package nl.sogyo.fp
 
 object arithmetics {
-  def sum(x: Int, y: Int): Int = {
-    x + y
-  }
+  def sum(x: Int, y: Int): Int = x + y
 
   def division(dividend: Int, divisor:Int): Int = {
     division(dividend, divisor, 0)
@@ -16,8 +14,6 @@ object arithmetics {
   }
 
   def modulus(dividend: Int, divisor: Int): Int = modulus(dividend, divisor, 0)
-
-  def isFullyDivisable(dividend: Int, divisor: Int): Boolean = modulus(dividend, divisor) == 0
 
   private def modulus(dividend: Int, divisor: Int, remainder: Int): Int = {
     if(divisor < dividend) modulus(dividend - divisor, divisor, 0)

@@ -3,6 +3,8 @@ package nl.sogyo.fp
 import org.scalatest.FunSuite
 
 class listTest extends FunSuite {
+
+  // Create a recursive function that takes a list and returns a list containing the even values of the supplied list
   test("filter evens from [1,2,3,4] == [2,4]") {
     assert(lists.filterEvens(List(1,2,3,4), List()) == List(2,4))
   }
@@ -19,6 +21,7 @@ class listTest extends FunSuite {
     assert(lists.filterEvens(List(1,3,5), List()) == List())
   }
 
+  // Create a recursive function that takes a list and returns the highest number in this list
   test("5 is max value in [1,2,3,4,5]") {
     assert(lists.findMax(List(1,2,3,4,5)) == 5)
   }
