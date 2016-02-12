@@ -8,17 +8,17 @@ class higherOrderTest extends FunSuite {
     assert(result == 2)
   }
 
-  test("Apply a function to a list to test if it contains an even number") {
+  test("Create a filter function on a list to test if it contains an even number") {
     val list = List(1,2,3)
     def isEven(n: Int) = n % 2 == 0
-    val result: Boolean = list.exists(isEven)
-    assert(result)
+    val result: List[Int] = higherOrder.myList(list).ownFilter(isEven)
+    assert(result == List(2))
   }
 
   test("Define a function increment (x+1) and map this function to a list of numbers") {
     val list = List(1,2,3)
     def increment(x: Int) = x + 1
-    val result: List[Int] = list.map(increment)
+    val result: List[Int] = higherOrder.myList(list).ownMap(increment)
     assert(result == List(2,3,4))
   }
 
@@ -28,8 +28,8 @@ class higherOrderTest extends FunSuite {
   }
 
   test("Apply division to list of ints with map") {
-    val list = List(2,4,6)
-    val result: List[Int] = list.map(i => arithmetics.division(i, 2))
+    val list = higherOrder.myList(List(2,4,6))
+    val result: List[Int] = list.ownMap(i => arithmetics.division(i, 2))
     assert(result == List(1,2,3))
   }
 
