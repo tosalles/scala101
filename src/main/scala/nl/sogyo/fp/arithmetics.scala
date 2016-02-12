@@ -17,6 +17,8 @@ object arithmetics {
 
   def modulus(dividend: Int, divisor: Int): Int = modulus(dividend, divisor, 0)
 
+  def isFullyDivisable(dividend: Int, divisor: Int): Boolean = modulus(dividend, divisor) == 0
+
   private def modulus(dividend: Int, divisor: Int, remainder: Int): Int = {
     if(divisor < dividend) modulus(dividend - divisor, divisor, 0)
     else if (divisor == dividend) 0
@@ -29,7 +31,5 @@ object arithmetics {
     case _ => nthFibonacciNumber(nth - 1) + nthFibonacciNumber(nth - 2)
   }
 
-  def curriedSum(x: Int)(y: Int): Int = {
-    x + y
-  }
+  def curriedSum(x: Int)(y: Int): Int = x + y
 }

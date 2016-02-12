@@ -35,4 +35,14 @@ class arithmeticsTest extends FunSuite {
   test("Sum integers by currying") {
     assert(arithmetics.curriedSum(1)(1) == 2)
   }
+
+  test("Make an increment function with the partial application pattern") {
+    val increment = arithmetics.curriedSum(1) _
+    assert(increment(4) == 5)
+  }
+
+  test("Make an isEven function with the partial application pattern") {
+    val isEven = arithmetics.isFullyDivisable(_: Int, 2)
+    assert(isEven(4))
+  }
 }
