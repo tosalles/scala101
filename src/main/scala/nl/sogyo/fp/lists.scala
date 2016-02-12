@@ -16,4 +16,8 @@ object lists {
     else if(list.head > result) findMax(list.tail, list.head)
     else findMax(list.tail, result)
   }
+
+  def patternmatching: String = {
+    "TODO"
+  }
 }
