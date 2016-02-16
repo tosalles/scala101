@@ -1,8 +1,6 @@
 package nl.sogyo.fp
 
 object arithmetics {
-  def sum(x: Int, y: Int): Int = x + y
-
   def division(dividend: Int, divisor:Int): Int = {
     division(dividend, divisor, 0)
   }

@@ -1,7 +1,6 @@
 package nl.sogyo.fp
 
-object higherOrder {
-
+object HigherOrderFunctions {
   implicit class myList[A](l: List[A]) {
 
     def ownFilter(f: A => Boolean): List[A] = {

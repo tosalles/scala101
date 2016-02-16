@@ -2,33 +2,33 @@ package nl.sogyo.fp
 
 import org.scalatest.FunSuite
 
-class higherOrderTest extends FunSuite {
+class HigherOrderFunctionsTest extends FunSuite {
   test("Apply sum function to two ints") {
-    val result: Int = higherOrder.apply(arithmetics.sum, 1, 1)
+    val result: Int = HigherOrderFunctions.apply(SayNoToAssignments.sum, 1, 1)
     assert(result == 2)
   }
 
   test("Create a filter function on a list to test if it contains an even number") {
     val list = List(1,2,3)
     def isEven(n: Int) = n % 2 == 0
-    val result: List[Int] = higherOrder.myList(list).ownFilter(isEven)
+    val result: List[Int] = HigherOrderFunctions.myList(list).ownFilter(isEven)
     assert(result == List(2))
   }
 
   test("Define a function increment (x+1) and map this function to a list of numbers") {
     val list = List(1,2,3)
     def increment(x: Int) = x + 1
-    val result: List[Int] = higherOrder.myList(list).ownMap(increment)
+    val result: List[Int] = HigherOrderFunctions.myList(list).ownMap(increment)
     assert(result == List(2,3,4))
   }
 
   test("Create a higher order function that can apply the division function to two ints") {
-    val result: Int = higherOrder.apply(arithmetics.division, 9, 3)
+    val result: Int = HigherOrderFunctions.apply(arithmetics.division, 9, 3)
     assert(result == 3)
   }
 
   test("Apply division to list of ints with map") {
-    val list = higherOrder.myList(List(2,4,6))
+    val list = HigherOrderFunctions.myList(List(2,4,6))
     val result: List[Int] = list.ownMap(i => arithmetics.division(i, 2))
     assert(result == List(1,2,3))
   }

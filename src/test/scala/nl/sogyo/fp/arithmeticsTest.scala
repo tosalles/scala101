@@ -4,10 +4,6 @@ import org.scalatest.FunSuite
 
 class arithmeticsTest extends FunSuite {
 
-  test("Say no to assignments: Define a function that sums its parameters. E.g. sum(1,1) = 2") {
-    assert(arithmetics.sum(1,1) == 2)
-  }
-
   // Create a recursive function that returns the division of two integers, use only < - == and +
   test("9 / 3 = 3") {
     assert(arithmetics.division(9,3) == 3)
