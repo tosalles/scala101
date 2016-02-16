@@ -7,6 +7,22 @@ object lists {
     else filterEvens(list.tail, result)
   }
 
+  def filterEvensPatternMatching(list: List[Int]): List[Int] = list match {
+    case head :: tail => {
+      if (head % 2 == 0) {
+        head :: filterEvensPatternMatching(tail)
+      } else {
+        filterEvensPatternMatching(tail)
+      }
+    }
+    case Nil => List()
+  }
+
+  def length[A](list : List[A]) : Int = list match {
+    case _ :: tail => 1 + length(tail)
+    case Nil => 0
+  }
+
   def findMax(list: List[Int]): Int = {
     findMax(list, 0)
   }
@@ -17,7 +33,4 @@ object lists {
     else findMax(list.tail, result)
   }
 
-  def patternmatching: String = {
-    "TODO"
-  }
 }

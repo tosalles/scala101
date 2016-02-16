@@ -21,6 +21,23 @@ class listTest extends FunSuite {
     assert(lists.filterEvens(List(1,3,5), List()) == List())
   }
 
+  // And for pattern matching:
+  test("filter with patternmatching evens from [1,2,3,4] == [2,4]") {
+    assert(lists.filterEvensPatternMatching(List(1,2,3,4)) == List(2,4))
+  }
+
+  test("filter with patternmatching evens from [] == []") {
+    assert(lists.filterEvensPatternMatching(List()) == List())
+  }
+
+  test("filter with patternmatching evens from [2,4,6] == [2,4,6]") {
+    assert(lists.filterEvensPatternMatching(List(2,4,6)) == List(2,4,6))
+  }
+
+  test("filter with patternmatching evens from [1,3,5] == []") {
+    assert(lists.filterEvensPatternMatching(List(1,3,5)) == List())
+  }
+
   // Create a recursive function that takes a list and returns the highest number in this list
   test("5 is max value in [1,2,3,4,5]") {
     assert(lists.findMax(List(1,2,3,4,5)) == 5)
