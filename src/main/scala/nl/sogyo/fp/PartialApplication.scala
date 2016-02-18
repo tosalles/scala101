@@ -1,8 +1,8 @@
 package nl.sogyo.fp
 
 object PartialApplication {
-  def sum(x: Int, y: Int): Int = x + y
+  def sum(x: Int, y: Int): Int
 
-  def successor():Int => Int = sum(1, _)
-  def predecessor():Int => Int = sum(-1, _)
+  def successor():Int => Int
+  def predecessor():Int => Int
 }
