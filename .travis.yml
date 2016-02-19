@@ -1,4 +1,6 @@
 language: scala
+before_install:
+- export TZ=Europe/Amsterdam
 jdk:
   - oraclejdk8
 scala:
