@@ -9,9 +9,6 @@ class StockStreamReader(val stockname: String) {
   def Stream(): Stream[StockTick] = {
     val stream: InputStream = getClass.getResourceAsStream("/" + stockname + ".csv")
     val lines = scala.io.Source.fromInputStream(stream).getLines
-    lines
-      .drop(1) // drop the header
-      .map(parser)
-      .toStream
+    List[StockTick]().toStream
   }
 }
