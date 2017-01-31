@@ -1,7 +1,7 @@
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint")
 
 lazy val commonSettings = Seq(
-  scalaVersion := "2.11.7"
+  scalaVersion := "2.12.1"
 )
 
 lazy val root = (project in file(".")).
@@ -10,7 +10,6 @@ lazy val root = (project in file(".")).
     name := "scala101"
   )
 
-libraryDependencies += "org.scalatest" % "scalatest_2.11" % "2.2.6" % "test"
+libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1" % "test"
 
 libraryDependencies += "junit" % "junit" % "4.12" % "test"
-

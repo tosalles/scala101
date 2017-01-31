@@ -1,33 +1,28 @@
 package nl.sogyo.stocks
 
-import scala.util.control.NonFatal
+import java.util.Date
+
+import scala.util.Try
 
 object StockTickParser {
-  def parseDouble(s: String) = s.toDouble
+  def parseDouble(s: String): Double = s.toDouble
 
-  def parseInt(s: String) = s.toInt
+  def parseInt(s: String): Int = s.toInt
 
-  def parseDate(s: String) = {
-    val format = new java.text.SimpleDateFormat("yyyy-MM-dd")
-    format.parse(s)
-  }
+  def parseDate(s: String): Date = new java.text.SimpleDateFormat("yyyy-MM-dd").parse(s)
 
-  def parseLine(name: String, line: String): StockTick = {
-    try {
-      val splitted = line.split(",")
+  def parseLine(name: String, line: String): Try[StockTick] = Try {
+    val splitted = line.split(",")
 
-      new StockTick(
-        name,
-        parseDate(splitted(0)),
-        parseDouble(splitted(1)),
-        parseDouble(splitted(2)),
-        parseDouble(splitted(3)),
-        parseDouble(splitted(4)),
-        parseInt(splitted(5)),
-        parseDouble(splitted(6))
-      )
-    } catch {
-      case NonFatal(_) => null
-    }
+    StockTick(
+      name,
+      parseDate(splitted(0)),
+      parseDouble(splitted(1)),
+      parseDouble(splitted(2)),
+      parseDouble(splitted(3)),
+      parseDouble(splitted(4)),
+      parseInt(splitted(5)),
+      parseDouble(splitted(6))
+    )
   }
 }

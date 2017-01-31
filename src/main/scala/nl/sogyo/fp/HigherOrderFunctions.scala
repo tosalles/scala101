@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 object HigherOrderFunctions {
 
-  implicit class myList[A](l: List[A]) {
+  implicit class MyList[A](l: List[A]) {
 
     def ownFilterImperative(f: A => Boolean): List[A] = {
       var result: List[A] = List[A]()
@@ -15,18 +15,17 @@ object HigherOrderFunctions {
     }
 
     def ownFilter(f: A => Boolean): List[A] = l match {
-      case head :: tail => {
+      case head :: tail =>
         if (f(head)) {
           head :: tail.ownFilter(f)
         } else {
           tail.ownFilter(f)
         }
-      }
-      case Nil => List()
+      case Nil => List.empty
     }
 
     def ownMapImperative[B](f: A => B): List[B] = {
-      var result: List[B] = List[B]()
+      var result: List[B] = List.empty
       for (element <- this.l) {
         result = result :+ f(element)
       }
@@ -35,11 +34,22 @@ object HigherOrderFunctions {
 
     def ownMap[B](f: A => B): List[B] = l match {
       case head :: tail => f(head) :: tail.ownMap(f)
-      case Nil => List()
+      case Nil => List.empty
     }
+
+    def ownFoldLeft[B](acc: B)(fn: (B, A) => B): B = l match {
+      case head :: tail => tail.ownFoldLeft(fn(acc, head))(fn)
+      case Nil => acc
+    }
+
+    def ownReverse: List[A] = l.reverse
+
+    def ownFoldRight[B](acc: B)(fn: (B, A) => B): B = l match {
+      case head :: tail => fn(tail.ownFoldRight(acc)(fn), head)
+      case Nil => acc
+    }
+
   }
 
-  def apply(function: (Int, Int) => Int, x: Int, y: Int): Int = {
-    function(x, y)
-  }
+  def apply(f: (Int, Int) => Int, x: Int, y: Int): Int = f(x, y)
 }

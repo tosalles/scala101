@@ -1,17 +1,19 @@
 package nl.sogyo.stocks
 
-import java.io.InputStream
+import scala.io.Source
+import scala.util.{Success, Try}
 
 // Stocks are from Yahoo finance http://finance.yahoo.com/q/hp?s=BAC etc
 class StockStreamReader(val stockname: String) {
-  val parser: String => StockTick = StockTickParser.parseLine(stockname, _)
+  val parser: String => Try[StockTick] = StockTickParser.parseLine(stockname, _)
 
-  def Stream(): Stream[StockTick] = {
-    val stream: InputStream = getClass.getResourceAsStream("/" + stockname + ".csv")
-    val lines = scala.io.Source.fromInputStream(stream).getLines
-    lines
-      .drop(1) // drop the header
-      .map(parser)
-      .toStream
-  }
+  def stream(): Stream[StockTick] = Source
+    .fromInputStream(getClass.getResourceAsStream(s"/$stockname.csv"))
+    .getLines
+    .drop(1) // drop the header
+    .map(parser)
+    .collect({
+      case Success(st) => st
+    })
+    .toStream
 }

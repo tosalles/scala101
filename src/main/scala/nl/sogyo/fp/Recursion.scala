@@ -1,5 +1,7 @@
 package nl.sogyo.fp
 
+import scala.annotation.tailrec
+
 object Recursion {
   def simpleSum(first: Long, last: Long): Long = {
     if (first == last) {
@@ -10,7 +12,7 @@ object Recursion {
   }
 
   def tailRecurseSum(first: Long, last: Long): Long = {
-    def tailRecurseHelper(first: Long, last: Long, partialSum: Long): Long = {
+    @tailrec def tailRecurseHelper(first: Long, last: Long, partialSum: Long): Long = {
       if (first == last) first + partialSum else tailRecurseHelper(first + 1, last, first + partialSum)
     }
     tailRecurseHelper(first, last, 0)
