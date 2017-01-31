@@ -5,3 +5,4 @@ object Recursion {
 
   def tailRecurseSum(first: Long, last: Long): Long = 1L
 }
+

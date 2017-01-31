@@ -1,5 +1,5 @@
 package nl.sogyo.stocks
 
 object StreamOps {
-  def merge(streams: Seq[Stream[StockTick]]): Stream[StockTick] = List[StockTick]().toStream
+  def merge[T](streams: Stream[T]*): Stream[T] = List[T]().toStream
 }

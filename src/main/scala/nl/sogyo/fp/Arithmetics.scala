@@ -1,9 +1,9 @@
 package nl.sogyo.fp
 
-object arithmetics {
-  def division(dividend: Int, divisor:Int): Int = 0
+object Arithmetics {
+  def division(dividend: Int, divisor: Int): Int = 0
 
-  private def division(dividend: Int, divisor:Int, quotient:Int): Int = 0
+  private def division(dividend: Int, divisor: Int, quotient: Int): Int = 0
 
   def modulus(dividend: Int, divisor: Int): Int = 0
 

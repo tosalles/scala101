@@ -1,35 +1,36 @@
 package nl.sogyo.stocks
 
-import org.scalatest.FunSuite
+import org.scalatest.{Matchers, WordSpec}
 
-class StockStreamReaderTest extends FunSuite {
-  test("Read a stream of stocks") {
-    val bac = new StockStreamReader("BAC")
-    val ticks = bac.Stream().take(3).toArray
-    assert(ticks.length == 3)
-    assert(ticks(0).close == 11.95)
-    assert(ticks(1).close == 11.16)
-  }
+class StockStreamReaderTest extends WordSpec with Matchers {
+  "A stream of stocks" should {
+    "be read and parsed" in {
+      val bac = new StockStreamReader("BAC")
+      val ticks = bac.stream().take(3).toList
+      ticks should have length 3
+      ticks.head.close shouldBe 11.95
+      ticks(1).close shouldBe 11.16
+    }
+    "merge stock streams" in {
+      val CSCO = new StockStreamReader("CSCO")
+      val MSFT = new StockStreamReader("MSFT")
 
-  test("Merge stock streams") {
-    val CSCO = new StockStreamReader("CSCO")
-    val MSFT = new StockStreamReader("MSFT")
+      CSCO.stream() should have length 6524
+      MSFT.stream() should have length 6582
 
-    assert(CSCO.Stream().length == 6524)
-    assert(MSFT.Stream().length == 6582)
+      val merged = CSCO.stream() #::: MSFT.stream()
 
-    val merged: Stream[StockTick] = CSCO.Stream() #::: MSFT.Stream()
+      merged should have length 13106
+    }
+    "merge any number of streams" in {
 
-    assert(merged.length == 13106)
-  }
+      val CSCO = new StockStreamReader("CSCO")
+      val MSFT = new StockStreamReader("MSFT")
+      val BAC = new StockStreamReader("BAC")
 
-  test("Merge any amount of streams") {
-    val CSCO = new StockStreamReader("CSCO")
-    val MSFT = new StockStreamReader("MSFT")
-    val BAC = new StockStreamReader("BAC")
+      val merged = StreamOps.merge(CSCO.stream(), MSFT.stream(), BAC.stream())
 
-    val merged = StreamOps.merge(Seq(CSCO.Stream(), MSFT.Stream(), BAC.Stream()))
-
-    assert(merged.length == 19688)
+      merged should have length 19688
+    }
   }
 }

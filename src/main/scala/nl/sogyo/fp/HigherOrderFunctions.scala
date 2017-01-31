@@ -1,12 +1,24 @@
 package nl.sogyo.fp
 
 object HigherOrderFunctions {
-  implicit class myList[A](l: List[A]) {
 
-    def ownFilter(f: A => Boolean): List[A] = List[A]()
+  implicit class MyList[A](l: List[A]) {
 
-    def ownMap[B](f: A => B): List[B] = List[B]()
+    def ownFilterImperative(f: A => Boolean): List[A] = List.empty
+
+    def ownFilter(f: A => Boolean): List[A] = List.empty
+
+    def ownMapImperative[B](f: A => B): List[B] = List.empty
+
+    def ownMap[B](f: A => B): List[B] = List.empty
+
+    def ownFoldLeft[B](acc: B)(fn: (B, A) => B): B = acc
+
+    def ownReverse: List[A] = List.empty
+
+    def ownFoldRight[B](acc: B)(fn: (B, A) => B): B = acc
+
   }
 
-  def apply(function: (Int, Int) => Int, x: Int, y: Int): Int = 0
+  def apply(f: (Int, Int) => Int, x: Int, y: Int): Int = f(x, y)
 }
