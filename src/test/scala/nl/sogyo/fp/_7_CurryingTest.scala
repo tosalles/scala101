@@ -5,7 +5,7 @@ import org.scalatest.{Matchers, WordSpec}
 class _7_CurryingTest extends WordSpec with Matchers {
   "Currying" should {
     "bind values in sumCurry" in {
-      val firstBound = Currying.sumCurry(3)
+      val firstBound = _7_Currying.sumCurry(3)
       val secondBound = firstBound(2)
       val finalBound = secondBound(1)
       finalBound shouldBe 6
@@ -13,7 +13,7 @@ class _7_CurryingTest extends WordSpec with Matchers {
       firstBound(0)(0) shouldBe 3
     }
     "bind values in sumCurryTwo" in {
-      val firstBound = Currying.sumCurryTwo(3) _
+      val firstBound = _7_Currying.sumCurryTwo(3) _
       val secondBound = firstBound(2)
       val finalBound = secondBound(1)
       finalBound shouldBe 6
