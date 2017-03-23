@@ -7,7 +7,7 @@ stages:
   - build
 
 sbt-test:
- except:
+  except:
     - Exercises
   stage: build
   script:
