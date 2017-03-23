@@ -57,7 +57,7 @@ class _9_ListTest extends FunSuite {
   }
 
   test("A list [5,5,5] is of length 3") {
-    assert(_9_Lists.length(List()) == 3)
+    assert(_9_Lists.length(List(5,5,5)) == 3)
   }
 
   test("A long list should not be a problem") {
