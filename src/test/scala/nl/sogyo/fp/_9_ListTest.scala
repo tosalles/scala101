@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import org.scalatest.FunSuite
 
-class ListTest extends FunSuite {
+class _9_ListTest extends FunSuite {
 
   // Create a recursive function that takes a list and returns a list containing the even values of the supplied list
   test("filter evens from [1,2,3,4] == [2,4]") {

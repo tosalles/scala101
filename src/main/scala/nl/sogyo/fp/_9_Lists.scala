@@ -2,10 +2,11 @@ package nl.sogyo.fp
 
 import scala.annotation.tailrec
 
-object Lists {
+object _9_Lists {
+
   def filterEvens(list: List[Int]): List[Int] = {
     if (list.isEmpty) List.empty
-    else if (Arithmetics.modulus(list.head, 2) == 0) list.head :: filterEvens(list.tail)
+    else if (_5b_Arithmetics.modulus(list.head, 2) == 0) list.head :: filterEvens(list.tail)
     else filterEvens(list.tail)
   }
 

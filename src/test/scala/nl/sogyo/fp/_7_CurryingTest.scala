@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import org.scalatest.{Matchers, WordSpec}
 
-class CurryingTest extends WordSpec with Matchers {
+class _7_CurryingTest extends WordSpec with Matchers {
   "Currying" should {
     "bind values in sumCurry" in {
       val firstBound = Currying.sumCurry(3)

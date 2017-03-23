@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import org.scalatest.FunSuite
 
-class PartialApplicationTest extends FunSuite {
+class _8_PartialApplicationTest extends FunSuite {
   test("Partial applied function pointing to the successor.") {
     val pred: Int => Int = PartialApplication.successor()
     assert(pred(4) == 5)

@@ -3,7 +3,7 @@ package nl.sogyo.fp
 import nl.sogyo.fp.HigherOrderFunctions.MyList
 import org.scalatest.{Matchers, WordSpec}
 
-class HigherOrderFunctionsTest extends WordSpec with Matchers {
+class _4_HigherOrderFunctionsTest extends WordSpec with Matchers {
   /**
     * Inclusive range of D[x, y]
     *
