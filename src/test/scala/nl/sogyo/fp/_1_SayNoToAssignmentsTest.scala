@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import org.scalatest.FunSuite
 
-class SayNoToAssignmentsTest extends FunSuite {
+class _1_SayNoToAssignmentsTest extends FunSuite {
 
   test("Define a function that sums its parameters. E.g. sum(1,1) = 2") {
     assert(SayNoToAssignments.sum(1, 1) == 2)

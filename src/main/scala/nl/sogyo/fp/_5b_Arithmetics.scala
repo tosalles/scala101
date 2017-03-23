@@ -1,6 +1,6 @@
 package nl.sogyo.fp
 
-object Arithmetics {
+object _5b_Arithmetics {
   def division(dividend: Int, divisor: Int): Int = {
     division(dividend, divisor, 0)
   }

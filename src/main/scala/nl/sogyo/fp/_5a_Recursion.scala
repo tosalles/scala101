@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import scala.annotation.tailrec
 
-object Recursion {
+object _5a_Recursion {
   def simpleSum(first: Long, last: Long): Long = {
     if (first == last) {
       first

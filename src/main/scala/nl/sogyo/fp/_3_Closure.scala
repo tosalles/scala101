@@ -1,6 +1,6 @@
 package nl.sogyo.fp
 
-object Closure {
+object _3_Closure {
 
   private def hiddenScaleFactor = 10
 

@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import org.scalatest.FunSuite
 
-class RecursionTest extends FunSuite {
+class _5a_RecursionTest extends FunSuite {
   test("Define a simple sum function") {
     assert(Recursion.simpleSum(1, 10) == 55)
     intercept[StackOverflowError] {
