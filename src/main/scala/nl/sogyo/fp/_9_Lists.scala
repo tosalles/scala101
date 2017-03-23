@@ -21,6 +21,13 @@ object _9_Lists {
     case Nil => 0
   }
 
+  def listLength[A](list: List[A]): Int = listLength(list, 0)
+
+  @tailrec private def listLength[A](list: List[A], result: Int): Int = list match {
+    case Nil => result
+    case head :: tail => listLength(tail, result + 1)
+  }
+
   def findMax(list: List[Int]): Int = findMax(list, 0)
 
   @tailrec private def findMax(list: List[Int], result: Int): Int = list match {

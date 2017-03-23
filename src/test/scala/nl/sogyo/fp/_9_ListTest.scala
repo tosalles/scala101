@@ -50,4 +50,12 @@ class _9_ListTest extends FunSuite {
   test("5 is max value in [3,1,5,2,4]") {
     assert(_9_Lists.findMax(List(3,1,5,2,4)) == 5)
   }
+
+  test("Calculate length of list [1,2,3] tailrecursive") {
+    assert(_9_Lists.listLength(List(1,2,3)) == 3)
+  }
+
+  test("Calculate length of list [] tailrecursive") {
+    assert(_9_Lists.listLength(List()) == 0)
+  }
 }
