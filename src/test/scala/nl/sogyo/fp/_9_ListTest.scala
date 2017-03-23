@@ -51,11 +51,16 @@ class _9_ListTest extends FunSuite {
     assert(_9_Lists.findMax(List(3,1,5,2,4)) == 5)
   }
 
-  test("Calculate length of list [1,2,3] tailrecursive") {
-    assert(_9_Lists.listLength(List(1,2,3)) == 3)
+  // Create a recursive function that takes a list and calculates the length of this list
+  test("An empty list is of length 0") {
+    assert(_9_Lists.length(List()) == 0)
   }
 
-  test("Calculate length of list [] tailrecursive") {
-    assert(_9_Lists.listLength(List()) == 0)
+  test("A list [5,5,5] is of length 3") {
+    assert(_9_Lists.length(List()) == 3)
+  }
+
+  test("A long list should not be a problem") {
+    assert(_9_Lists.length(List.range(0, 10000)) == 10000)
   }
 }
