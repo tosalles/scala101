@@ -1,6 +1,6 @@
 package nl.sogyo.fp
 
-import nl.sogyo.fp.HigherOrderFunctions.MyList
+import nl.sogyo.fp._4_HigherOrderFunctions.MyList
 import org.scalatest.{Matchers, WordSpec}
 
 class _4_HigherOrderFunctionsTest extends WordSpec with Matchers {
@@ -16,7 +16,7 @@ class _4_HigherOrderFunctionsTest extends WordSpec with Matchers {
 
   "MyList" should {
     "Apply sum function to two ints" in {
-      val result: Int = HigherOrderFunctions.apply(SayNoToAssignments.sum, 1, 1)
+      val result: Int = _4_HigherOrderFunctions.apply(_1_SayNoToAssignments.sum, 1, 1)
       result shouldBe 2
     }
 
@@ -25,7 +25,7 @@ class _4_HigherOrderFunctionsTest extends WordSpec with Matchers {
 
       def isEven(n: Int) = n % 2 == 0
 
-      val result: List[Int] = HigherOrderFunctions.MyList(list).ownFilter(isEven)
+      val result: List[Int] = _4_HigherOrderFunctions.MyList(list).ownFilter(isEven)
       result shouldBe List(2)
     }
 
@@ -34,18 +34,18 @@ class _4_HigherOrderFunctionsTest extends WordSpec with Matchers {
 
       def increment(x: Int) = x + 1
 
-      val result: List[Int] = HigherOrderFunctions.MyList(list).ownMap(increment)
+      val result: List[Int] = _4_HigherOrderFunctions.MyList(list).ownMap(increment)
       result shouldBe List(2, 3, 4)
     }
 
     "Create a higher order function that can apply the division function to two ints" in {
-      val result: Int = HigherOrderFunctions.apply(Arithmetics.division, 9, 3)
+      val result: Int = _4_HigherOrderFunctions.apply(_5b_Arithmetics.division, 9, 3)
       result shouldBe 3
     }
 
     "Apply division to list of ints with map" in {
-      val list = HigherOrderFunctions.MyList(List(2, 4, 6))
-      val result: List[Int] = list.ownMap(i => Arithmetics.division(i, 2))
+      val list = _4_HigherOrderFunctions.MyList(List(2, 4, 6))
+      val result: List[Int] = list.ownMap(i => _5b_Arithmetics.division(i, 2))
       result shouldBe range(1, 3)
     }
 
