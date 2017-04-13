@@ -7,3 +7,8 @@ Opdrachten voor tkd
 [Presentatie: TKD-Functional Programming.pptx](https://docs.google.com/presentation/d/1-UXQAXozvWV-M48wimweOjQoGP1YW_ApXKDgOTfcYXk/)
 
 
+- Unit testen laatste deel
+- testen myfilter mymap etc
+- drop header stocks
+- Nieuwe nieuws plaatjes p15
+- Stocks: concretere opdrachten. 
