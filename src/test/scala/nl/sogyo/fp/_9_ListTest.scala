@@ -53,14 +53,14 @@ class _9_ListTest extends FunSuite {
 
   // Create a recursive function that takes a list and calculates the length of this list
   test("An empty list is of length 0") {
-    assert(_9_Lists.length(List()) == 0)
+    assert(_9_Lists.listLength(List()) == 0)
   }
 
   test("A list [5,5,5] is of length 3") {
-    assert(_9_Lists.length(List(5,5,5)) == 3)
+    assert(_9_Lists.listLength(List(5,5,5)) == 3)
   }
 
   test("A long list should not be a problem") {
-    assert(_9_Lists.length(List.range(0, 10000)) == 10000)
+    assert(_9_Lists.listLength(List.range(0, 10000)) == 10000)
   }
 }
