@@ -1,5 +1,6 @@
 package nl.sogyo.fp._4
 
+import nl.sogyo.Range
 import nl.sogyo.fp._4_HigherOrderFunctions
 import org.scalatest.{Matchers, WordSpec}
 

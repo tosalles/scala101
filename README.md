@@ -7,8 +7,7 @@ Opdrachten voor tkd
 [Presentatie: TKD-Functional Programming.pptx](https://docs.google.com/presentation/d/1-UXQAXozvWV-M48wimweOjQoGP1YW_ApXKDgOTfcYXk/)
 
 
-- Unit testen laatste deel
-- drop header stocks
-- Nieuwe nieuws plaatjes p15
 - Stocks: concretere opdrachten. 
-.
+- Unit testen laatste deel
+- Nieuwe nieuws plaatjes p15
+- 4 + 5 omdraaien
