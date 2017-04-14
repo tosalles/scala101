@@ -1,4 +1,4 @@
-package nl.sogyo.fp._4
+package nl.sogyo
 
 trait Range {
   /**

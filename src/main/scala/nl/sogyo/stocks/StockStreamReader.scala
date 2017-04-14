@@ -10,10 +10,10 @@ class StockStreamReader(val stockname: String) {
   def stream(): Stream[StockTick] = Source
     .fromInputStream(getClass.getResourceAsStream(s"/$stockname.csv"))
     .getLines
-    .drop(1) // drop the header
     .map(parser)
-    .collect({
+    .collect {
       case Success(st) => st
-    })
+    }
     .toStream
+    .reverse
 }
