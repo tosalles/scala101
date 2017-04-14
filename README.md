@@ -8,7 +8,7 @@ Opdrachten voor tkd
 
 
 - Unit testen laatste deel
-- testen myfilter mymap etc
 - drop header stocks
 - Nieuwe nieuws plaatjes p15
 - Stocks: concretere opdrachten. 
+.
