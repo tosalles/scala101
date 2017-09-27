@@ -1,6 +1,6 @@
 package nl.sogyo.fp
 
-object _4_HigherOrderFunctions {
+object _5_HigherOrderFunctions {
 
   implicit class MyList[A](l: List[A]) {
 
