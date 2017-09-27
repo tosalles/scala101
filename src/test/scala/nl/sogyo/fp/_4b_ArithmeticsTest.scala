@@ -2,7 +2,7 @@ package nl.sogyo.fp
 
 import org.scalatest.FunSuite
 
-class _5b_ArithmeticsTest extends FunSuite {
+class _4b_ArithmeticsTest extends FunSuite {
 
   // Create a recursive function that returns the division of two integers, use only < - == and +
   test("9 / 3 = 3") {
