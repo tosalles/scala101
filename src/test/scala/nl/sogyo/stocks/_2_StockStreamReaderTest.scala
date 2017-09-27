@@ -2,7 +2,7 @@ package nl.sogyo.stocks
 
 import org.scalatest.{Matchers, WordSpec}
 
-class StockStreamReaderTest extends WordSpec with Matchers {
+class _2_StockStreamReaderTest extends WordSpec with Matchers {
   "A stream of stocks" should {
     "be read and parsed" in {
       val bac = new StockStreamReader("BAC")
