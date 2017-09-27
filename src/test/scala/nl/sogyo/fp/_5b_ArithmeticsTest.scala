@@ -36,13 +36,13 @@ class _5b_ArithmeticsTest extends FunSuite {
     assert(_5b_Arithmetics.curriedSum(1)(1) == 2)
   }
 
-  test("Make an increment function with the partial application pattern") {
-    val increment: Int => Int = _5b_Arithmetics.curriedSum(1)
+  test("Make an increment function with the partial application pattern using earlier created functions") {
+    val increment: Int => Int = (x: Int) => 0
     assert(increment(4) == 5)
   }
 
-  test("Make an isEven function with the partial application pattern") {
-    val isEven: Int => Boolean = _5b_Arithmetics.modulus(_: Int, 2) == 0
+  test("Make an isEven function with the partial application pattern using earlier created functions") {
+    val isEven: Int => Boolean = (x: Int) => false
     assert(isEven(4))
   }
 }
