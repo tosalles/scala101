@@ -37,12 +37,12 @@ class _5b_ArithmeticsTest extends FunSuite {
   }
 
   test("Make an increment function with the partial application pattern using earlier created functions") {
-    val increment: Int => Int = (x: Int) => 0
+    val increment: Int => Int = ???
     assert(increment(4) == 5)
   }
 
   test("Make an isEven function with the partial application pattern using earlier created functions") {
-    val isEven: Int => Boolean = (x: Int) => false
+    val isEven: Int => Boolean = ???
     assert(isEven(4))
   }
 }

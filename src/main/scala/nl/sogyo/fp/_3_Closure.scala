@@ -4,5 +4,5 @@ object _3_Closure {
 
   private def hiddenScaleFactor = 10
 
-  def scale(value: Int): Int = 0
+  def scale(value: Int): Int = ???
 }

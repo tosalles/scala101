@@ -1,5 +1,5 @@
 package nl.sogyo.fp
 
 object _1_SayNoToAssignments {
-  def sum(x: Int, y: Int): Int = 0
+  def sum(x: Int, y: Int): Int = ???
 }
