@@ -1,7 +1,7 @@
 package nl.sogyo.fp._5
 
 import nl.sogyo.Range
-import nl.sogyo.fp._4_HigherOrderFunctions.MyList
+import nl.sogyo.fp._5_HigherOrderFunctions.MyList
 import org.scalatest.{Matchers, WordSpec}
 
 class FoldTest extends WordSpec with Matchers with Range {
