@@ -4,7 +4,7 @@ import java.util.Date
 
 import org.scalatest.{Matchers, WordSpec}
 
-class CalculateWithStocksTest extends WordSpec with Matchers {
+class _4_CalculateWithStocksTest extends WordSpec with Matchers {
   val BAC = new StockStreamReader("BAC")
   val MSFT = new StockStreamReader("MSFT")
   val CSCO = new StockStreamReader("CSCO")

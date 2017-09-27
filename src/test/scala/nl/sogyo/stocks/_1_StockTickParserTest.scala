@@ -4,7 +4,7 @@ import java.util.Date
 
 import org.scalatest.{Matchers, WordSpec}
 
-class StockTickParserTest extends WordSpec with Matchers {
+class _1_StockTickParserTest extends WordSpec with Matchers {
   val line = "2016-02-08,49.549999,49.57,48.189999,49.41,57006100,49.41"
   "Parsing a line from a stock ticker" should {
     val parsedTick = StockTickParser.parseLine("my-name", line)
