@@ -1,4 +1,4 @@
-package nl.sogyo.fp._4
+package nl.sogyo.fp._5
 
 import nl.sogyo.Range
 import nl.sogyo.fp._4_HigherOrderFunctions

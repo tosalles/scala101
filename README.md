@@ -9,5 +9,3 @@ Opdrachten voor tkd
 
 - Stocks: concretere opdrachten. 
 - Unit testen laatste deel
-- Nieuwe nieuws plaatjes p15
-- 4 + 5 omdraaien
