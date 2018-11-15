@@ -4,6 +4,8 @@ import java.util.Date
 
 import org.scalatest.{Matchers, WordSpec}
 
+import scala.collection.immutable.Stream
+
 class _4_CalculateWithStocksTest extends WordSpec with Matchers {
   val BAC = new StockStreamReader("BAC")
   val MSFT = new StockStreamReader("MSFT")
@@ -41,15 +43,32 @@ class _4_CalculateWithStocksTest extends WordSpec with Matchers {
   "Calculating the average price per stock per year" should {
     "work just fine" in {
       val result = CalculateWithStocks.averageClosingPricePerStockPerYear(ALL)
+
       // TODO: properly assert this test.
       result.sorted foreach println
+    }
+  }
+
+  "Calculating the highest closing price in a period" should {
+    "be empty when the period is the same day" in {
+      val ticks = BAC.stream().take(3)
+      val result = CalculateWithStocks.highestClosingPriceWithinPeriod(ticks, new Date(90,0,1), new Date(90,0,1))
+      result should have length 0
+    }
+
+    "be 47.0 for the first three days of BAC" in {
+      val ticks = BAC.stream().take(3)
+      val result = CalculateWithStocks.highestClosingPriceWithinPeriod(ticks, new Date(90,0,1), new Date(90, 0, 5)).head
+      result._3 should equal (47.0)
     }
   }
   // TODO: create tests for the following funcs
   //bestPerformingStockPerYear(stocks: Stream[StockTick]): Stream[(String, Int, Double)] = ???
   //biggestDeltaWithinOneYear(stocks: Stream[StockTick]): Stream[(String, Int, Double)] = ???
   //def lowestOpeningPricePerYear(stocks: Stream[StockTick]): Stream[(String, Date, Double)] = ???
-  //def highestClosingPricePerYear(stocks: Stream[StockTick]): Stream[(String, Date, Double)] = ???
-  //def lowestOpeningPriceWithinPeriod(stocks: Stream[StockTick], start: Date, end: Date): Stream[(String, Date, Double)] = ???
+
+//  def highestClosingPricePerYear(stocks: Stream[StockTick]): Stream[(String, Date, Double)] = ???
+
+//  def lowestOpeningPriceWithinPeriod(stocks: Stream[StockTick], start: Date, end: Date): Stream[(String, Date, Double)] = ???
   //def highestClosingPriceWithinPeriod(stocks: Stream[StockTick], start: Date, end: Date): Stream[(String, Date, Double)] = ???
 }

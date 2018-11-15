@@ -29,7 +29,18 @@ object CalculateWithStocks {
     *
     * @param stocks A stream of stocks. These can be mixed by ticker symbol
     */
-  def highestClosingPriceWithinPeriod(stocks: Stream[StockTick], start: Date, end: Date): Stream[(String, Date, Double)] = ???
+  def highestClosingPriceWithinPeriod(stocks: Stream[StockTick], start: Date, end: Date): Stream[(String, Date, Double)] = {
+
+    val r = stocks
+      .filter(s => s.date.after(start))
+      .filter(s => s.date.before(end))
+      .map(s => (s.name, s.date, s.close))
+
+      r match {
+        case Stream() => Stream.empty
+        case x#::xs => Stream(r.maxBy(s => s._3))
+      }
+  }
 
   /**
     * Calculate the average closing price of stocks for each period, given a stream and a length in days
